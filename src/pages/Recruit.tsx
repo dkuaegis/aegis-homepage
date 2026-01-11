@@ -1,5 +1,6 @@
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
+import lockIcon from '../assets/lock.svg';
 
 function Recruit() {
   // 별들을 생성하는 함수
@@ -36,7 +37,7 @@ function Recruit() {
           <div className="recruit-header">
             <h2 className="recruit-title">모집 안내</h2>
             <p className="recruit-subtitle">AEGIS에 함께할 멤버를 모집합니다.</p>
-            <a href="#" className="recruit-cta-btn">가입하러가기</a>
+            <a href="https://join.dkuaegis.org/login" target="_blank" rel="noopener noreferrer" className="recruit-cta-btn">가입하러가기</a>
           </div>
 
           <div className="recruit-content">
@@ -82,11 +83,7 @@ function Recruit() {
                     <span className="team-name">SECURITY.</span>
                   </div>
                   <div className="team-card-icon">
-                    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <rect x="16" y="28" width="32" height="24" rx="4" fill="white"/>
-                      <path d="M24 28V20C24 15.5817 27.5817 12 32 12C36.4183 12 40 15.5817 40 20V28" stroke="white" strokeWidth="4" strokeLinecap="round"/>
-                      <circle cx="32" cy="40" r="4" fill="#1a1a3e"/>
-                    </svg>
+                    <img src={lockIcon} alt="보안팀 아이콘" style={{ width: '320px' }} />
                   </div>
                   <div className="team-card-arrow">→</div>
                   <p className="team-description">시스템 취약점 분석, 모의해킹, CTF 대회 참가 등 보안 관련 활동을 진행합니다.</p>

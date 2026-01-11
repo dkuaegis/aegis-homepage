@@ -11,7 +11,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/faq" element={<FAQ />} />
+        <Route path="/questions" element={<FAQ />} />
         <Route path="/recruit" element={<Recruit />} />
       </Routes>
     </BrowserRouter>

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 interface NavigationProps {
-  currentPage?: 'home' | 'faq' | 'recruit';
+  currentPage?: 'home' | 'questions' | 'recruit';
 }
 
 function Navigation({ currentPage = 'home' }: NavigationProps) {
@@ -33,7 +33,7 @@ function Navigation({ currentPage = 'home' }: NavigationProps) {
         <Link to="/" className="logo">AEGIS</Link>
         <div className="nav-links">
           <a href="#activity" onClick={scrollToActivity}>ACTIVITY</a>
-          <Link to="/faq" className={currentPage === 'faq' ? 'active' : ''}>FAQ</Link>
+          <Link to="/questions" className={currentPage === 'questions' ? 'active' : ''}>FAQ</Link>
           <Link to="/recruit" className={currentPage === 'recruit' ? 'active' : ''}>RECRUIT</Link>
         </div>
 
@@ -65,7 +65,7 @@ function Navigation({ currentPage = 'home' }: NavigationProps) {
         </div>
         <div className="mobile-menu-links">
           <a href="#activity" onClick={(e) => { scrollToActivity(e); setMenuOpen(false); }}>Activity</a>
-          <Link to="/faq" onClick={() => setMenuOpen(false)}>FAQ</Link>
+          <Link to="/questions" onClick={() => setMenuOpen(false)}>FAQ</Link>
           <Link to="/recruit" onClick={() => setMenuOpen(false)}>Recruit</Link>
         </div>
       </div>
