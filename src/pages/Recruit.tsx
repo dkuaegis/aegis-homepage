@@ -1,6 +1,5 @@
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
-import lockIcon from '../assets/lock.svg';
 
 function Recruit() {
   // 별들을 생성하는 함수
@@ -68,37 +67,6 @@ function Recruit() {
                 <div>
                   <p>회비는 <strong>15,000원</strong>입니다.</p>
                   <p className="notice-sub">이전 운영진은 회비가 면제되니 문의란의 연락처로 문의주세요.</p>
-                </div>
-              </div>
-            </div>
-
-            {/* 모집 직군 섹션 */}
-            <div className="recruit-positions">
-              <h2 className="positions-title">모집 직군</h2>
-              <p className="positions-subtitle">AEGIS에서 함께 성장해나가실 분들을 모집합니다.</p>
-              <div className="teams-grid">
-                <div className="team-card team-security">
-                  <div className="team-card-header">
-                    <span className="team-label">보안</span>
-                    <span className="team-name">SECURITY.</span>
-                  </div>
-                  <div className="team-card-icon">
-                    <img src={lockIcon} alt="보안팀 아이콘" style={{ width: '320px' }} />
-                  </div>
-                  <div className="team-card-arrow">→</div>
-                  <p className="team-description">시스템 취약점 분석, 모의해킹, CTF 대회 참가 등 보안 관련 활동을 진행합니다.</p>
-                </div>
-
-                <div className="team-card team-dev">
-                  <div className="team-card-header">
-                    <span className="team-label">개발</span>
-                    <span className="team-name">DEVELOPMENT.</span>
-                  </div>
-                  <div className="team-card-icon">
-                    <span className="code-icon">&lt;/&gt;</span>
-                  </div>
-                  <div className="team-card-arrow">→</div>
-                  <p className="team-description">팀의 창업 아이템을 서비스로 구현해내기 위해 웹/앱 클라이언트 또는 서버를 개발합니다.</p>
                 </div>
               </div>
             </div>

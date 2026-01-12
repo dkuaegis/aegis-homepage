@@ -5,8 +5,6 @@ function Footer() {
         <div className="footer-brand">AEGIS</div>
         <div className="footer-right">
           <div className="footer-meta">
-            <span>단국대학교 개발·보안 동아리</span>
-            <span>dankook.aegis@gmail.com</span>
             <span>© 2026 aegis all rights reserved.</span>
           </div>
           <div className="footer-links">

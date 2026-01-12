@@ -96,7 +96,7 @@ a {
 .stars-container {
   position: absolute;
   inset: 0;
-  z-index: 1;
+  z-index: 0;
   overflow: hidden;
 }
 
@@ -134,7 +134,7 @@ a {
   height: 2px;
   background: linear-gradient(90deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.4) 50%, transparent 100%);
   border-radius: 50%;
-  z-index: 1;
+  z-index: -1;
   opacity: 0;
 }
 
@@ -170,7 +170,7 @@ a {
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 28px;
   pointer-events: none;
-  z-index: 1;
+  z-index: 2;
 }
 
 .nav {
@@ -300,7 +300,7 @@ a {
   transform: rotate(-32deg);
   left: -210px;
   top: 180px;
-  z-index: 2;
+  z-index: 1;
   box-shadow: 0 20px 40px rgba(10, 18, 50, 0.3);
 }
 
@@ -326,7 +326,7 @@ a {
   border-bottom-color: transparent;
   border-radius: 50%;
   transform: rotate(18deg);
-  z-index: 1;
+  z-index: 0;
   animation: signal-rotate 6s linear infinite;
 }
 
@@ -347,7 +347,7 @@ a {
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.8);
   box-shadow: 0 0 12px rgba(255, 255, 255, 0.35);
-  z-index: 2;
+  z-index: 0;
 }
 
 .spark.s1 {
@@ -628,6 +628,66 @@ a {
   color: rgba(255, 255, 255, 0.6) !important;
 }
 
+/* ========== Contact 섹션 ========== */
+.recruit-contact-section {
+  margin-top: 48px;
+  text-align: center;
+}
+
+.contact-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 24px;
+}
+
+.contact-card {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background: #2A2F3D;
+  border-radius: 16px;
+  padding: 32px 64px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  margin-top: 48px;
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.contact-card:hover {
+  background: #323846;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.contact-icon {
+  width: 32px;
+  height: 32px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.contact-email {
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
 .recruit-contact {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -789,6 +849,119 @@ a {
   color: #fff;
 }
 
+/* ========== Contact 페이지 ========== */
+.contact-page {
+  min-height: 100vh;
+  background: var(--bg);
+  position: relative;
+  overflow: hidden;
+  padding: 32px 72px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+.contact-page .nav {
+  position: relative;
+  z-index: 3;
+}
+
+/* ========== Contact 섹션 ========== */
+.contact {
+  padding: 0 0 60px;
+  background: transparent;
+  color: #fff;
+  position: relative;
+  z-index: 3;
+  flex: 1;
+}
+
+.contact-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* ========== Contact 페이지 ========== */
+.contact-page {
+  min-height: 100vh;
+  background: var(--bg);
+  position: relative;
+  overflow: hidden;
+  padding: 32px 72px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+.contact-page .nav {
+  position: relative;
+  z-index: 3;
+}
+
+.contact {
+  padding: 0 0 60px;
+  background: transparent;
+  color: #fff;
+  position: relative;
+  z-index: 3;
+  flex: 1;
+}
+
+.contact-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.contact-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.contact-subtitle {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.contact-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 48px 0;
+}
+
+.contact-email {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 32px 48px;
+  transition: all 0.3s ease;
+}
+
+.contact-email:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.contact-email a {
+  font-size: 20px;
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.contact-email a:hover {
+  color: #5577ff;
+}
+
 .faq-inner {
   max-width: 900px;
   margin: 0 auto;
@@ -802,13 +975,13 @@ a {
 .faq-title {
   font-size: 36px;
   font-weight: 700;
-  color: #fff;
+  color: #ffffff;
   margin-bottom: 12px;
 }
 
 .faq-subtitle {
   font-size: 16px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #ffffff;
 }
 
 .faq-list {
@@ -843,14 +1016,14 @@ a {
   border: none;
   cursor: pointer;
   text-align: left;
-  color: #fff;
+  color: #ffffff;
   font-size: 16px;
   font-weight: 500;
   transition: all 0.2s ease;
 }
 
 .faq-question:hover {
-  color: rgba(255, 255, 255, 0.9);
+  color: #ffffff;
 }
 
 .faq-icon {
@@ -879,7 +1052,7 @@ a {
   margin: 0;
   font-size: 15px;
   line-height: 1.7;
-  color: rgba(255, 255, 255, 0.7);
+  color: #ffffff;
   background: rgba(255, 255, 255, 0.02);
   padding-top: 16px;
   margin: 0 12px 12px;
@@ -1058,6 +1231,14 @@ a {
     padding: 0 0 100px;
   }
 
+  .contact-page {
+    padding: 28px 40px 0;
+  }
+
+  .contact {
+    padding: 0 0 48px;
+  }
+
   .site-footer {
     padding: 42px 40px 56px;
     width: 100%;
@@ -1228,6 +1409,19 @@ a {
     font-size: 28px;
   }
 
+  .contact-page {
+    padding: 24px 24px 0;
+    gap: 36px;
+  }
+
+  .contact {
+    padding: 0 0 40px;
+  }
+
+  .contact-title {
+    font-size: 28px;
+  }
+
   .notice-item {
     padding: 20px 20px;
     gap: 16px;
@@ -1251,6 +1445,22 @@ a {
 
   .recruit-contact p {
     font-size: 14px;
+  }
+
+  .contact-title {
+    font-size: 20px;
+  }
+
+  .contact-card {
+    flex-direction: column;
+    gap: 12px;
+    font-size: 16px;
+    padding: 24px 32px;
+  }
+
+  .contact-icon {
+    width: 28px;
+    height: 28px;
   }
 
   .teams-grid {
