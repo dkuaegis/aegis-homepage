@@ -4,9 +4,6 @@ function Footer() {
       <div className="footer-inner">
         <div className="footer-brand">AEGIS</div>
         <div className="footer-right">
-          <div className="footer-meta">
-            <span>© 2026 aegis all rights reserved.</span>
-          </div>
           <div className="footer-links">
             <a
               className="footer-link instagram-link"
@@ -32,6 +29,9 @@ function Footer() {
             </a>
           </div>
         </div>
+      </div>
+      <div className="footer-meta">
+        <span>© 2026 aegis all rights reserved.</span>
       </div>
     </footer>
   );

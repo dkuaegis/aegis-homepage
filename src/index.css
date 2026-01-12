@@ -1083,10 +1083,10 @@ a {
 }
 
 .footer-meta {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 18px;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   font-size: 13px;
   letter-spacing: 0.08em;
 }
@@ -1260,7 +1260,9 @@ a {
   }
 
   .footer-meta {
-    margin-top: 8px;
+    bottom: 16px;
+    left: 40px;
+    transform: none;
   }
 }
 
@@ -1492,6 +1494,13 @@ a {
   .site-footer {
     padding: 36px 24px 48px;
     width: 100%;
+  }
+
+  .footer-meta {
+    bottom: 12px;
+    left: 24px;
+    transform: none;
+    font-size: 12px;
   }
 }
 
