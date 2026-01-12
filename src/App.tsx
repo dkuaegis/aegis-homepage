@@ -1,13 +1,16 @@
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 
-// 활동 이미지 import
+// 이미지 import
 import studyImg from './assets/study.webp';
 import codeClubImg from './assets/code-club.webp';
 import devTeamImg from './assets/dev-team.webp';
 import securityTeamImg from './assets/security-team.webp';
 import seminarImg from './assets/seminar.webp';
 import techTalkImg from './assets/tech-talk.webp';
+import psHspaceImg from './assets/ps_hspace.webp';
+import psSwImg from './assets/ps_sw.webp';
+import psTheoriImg from './assets/ps_theori.webp';
 
 function App() {
 
@@ -140,9 +143,15 @@ function App() {
         <div className="partners-inner">
           <div className="partners-title">Partnerships</div>
           <div className="partners-grid">
-            <div className="partner-card">Partner Logo</div>
-            <div className="partner-card">Partner Logo</div>
-            <div className="partner-card">Partner Logo</div>
+            <div className="partner-card">
+              <img src={psHspaceImg} alt="H-Space" />
+            </div>
+            <div className="partner-card">
+              <img src={psSwImg} alt="SW중심대학" />
+            </div>
+            <div className="partner-card">
+              <img src={psTheoriImg} alt="Theori" />
+            </div>
           </div>
         </div>
       </section>
