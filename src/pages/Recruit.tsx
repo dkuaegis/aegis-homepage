@@ -40,7 +40,7 @@ function Recruit() {
           <div className="recruit-header">
             <h2 className="recruit-title">모집 안내</h2>
             <p className="recruit-subtitle">AEGIS에 함께할 멤버를 모집합니다.</p>
-            <a href="https://join.dkuaegis.org/login" target="_blank" rel="noopener noreferrer" className="recruit-cta-btn">가입하러가기</a>
+            <a href="https://join.dkuaegis.org/login" target="_blank" rel="noopener noreferrer" className="recruit-cta-btn">가입가기</a>
           </div>
 
           <div className="recruit-content">
