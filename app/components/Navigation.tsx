@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { checkAuth, type AuthUser } from '../api/auth';
 
 interface NavigationProps {
   currentPage?: 'home' | 'faq' | 'recruit' | 'contact' | 'login';
@@ -7,7 +8,15 @@ interface NavigationProps {
 
 function Navigation({ currentPage = 'home' }: NavigationProps) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [authUser, setAuthUser] = useState<AuthUser>({ isAuthenticated: false, status: null });
   const navigate = useNavigate();
+  const API_URL = import.meta.env.VITE_API_URL;
+
+  useEffect(() => {
+    checkAuth().then(setAuthUser);
+  }, []);
+
+  const { isAuthenticated, status } = authUser;
 
   const scrollToActivity = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
@@ -27,15 +36,53 @@ function Navigation({ currentPage = 'home' }: NavigationProps) {
     }
   };
 
+  const renderAuthLinks = (isMobile = false) => {
+    if (!isAuthenticated) {
+      return (
+        <a
+          href={`${API_URL}/oauth2/authorization/google`}
+          className={currentPage === 'login' ? 'active' : ''}
+          onClick={isMobile ? () => setMenuOpen(false) : undefined}
+        >
+          Login
+        </a>
+      );
+    }
+
+    if (status === 'PENDING') {
+      return (
+        <a
+          href="https://join.dkuaegis.org"
+          className={isMobile ? '' : 'px-4 py-2 bg-white text-black rounded-lg hover:bg-gray-200 transition-colors font-semibold text-sm'}
+          onClick={isMobile ? () => setMenuOpen(false) : undefined}
+        >
+          {isMobile ? 'Join' : '동아리 가입하러 가기'}
+        </a>
+      );
+    }
+
+    if (status === 'COMPLETED') {
+      return (
+        <>
+          <a href="https://study.dkuaegis.org" onClick={isMobile ? () => setMenuOpen(false) : undefined}>Study</a>
+          <a href="https://mypage.dkuaegis.org" onClick={isMobile ? () => setMenuOpen(false) : undefined}>Mypage</a>
+        </>
+      );
+    }
+
+    return null;
+  };
+
   return (
     <>
       <nav className="nav">
         <Link to="/" className="logo">AEGIS</Link>
-        <div className="nav-links">
+        <div className="nav-links items-center">
           <a href="#activity" onClick={scrollToActivity}>ACTIVITY</a>
           <Link to="/faq" className={currentPage === 'faq' ? 'active' : ''}>FAQ</Link>
           <Link to="/recruit" className={currentPage === 'recruit' ? 'active' : ''}>RECRUIT</Link>
           <Link to="/contact" className={currentPage === 'contact' ? 'active' : ''}>CONTACT</Link>
+          {renderAuthLinks()}
         </div>
 
         {/* 햄버거 버튼 (모바일) */}
@@ -69,6 +116,7 @@ function Navigation({ currentPage = 'home' }: NavigationProps) {
           <Link to="/faq" onClick={() => setMenuOpen(false)}>FAQ</Link>
           <Link to="/recruit" onClick={() => setMenuOpen(false)}>Recruit</Link>
           <Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link>
+          {renderAuthLinks(true)}
         </div>
       </div>
 

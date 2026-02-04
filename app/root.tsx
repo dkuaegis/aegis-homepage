@@ -5,7 +5,18 @@ import {
     Scripts,
     ScrollRestoration,
 } from "react-router";
+import type { LinksFunction, LoaderFunctionArgs } from "react-router";
+import { checkAuth } from "./api/auth";
 import "./index.css";
+
+export const links: LinksFunction = () => [
+    { rel: "icon", href: "/aegis-logo.ico" },
+];
+
+export async function loader({ }: LoaderFunctionArgs) {
+    const user = await checkAuth();
+    return { user };
+}
 
 export function Layout({ children }: { children: React.ReactNode }) {
     return (
