@@ -2,7 +2,8 @@
 
 /* ========== 별 반짝임 애니메이션 ========== */
 @keyframes twinkle {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0.3;
     transform: scale(1);
   }
@@ -13,13 +14,16 @@
 }
 
 @keyframes twinkle-glow {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0.4;
     box-shadow: 0 0 4px rgba(255, 255, 255, 0.3);
   }
   50% {
     opacity: 1;
-    box-shadow: 0 0 12px rgba(255, 255, 255, 0.8), 0 0 20px rgba(180, 200, 255, 0.5);
+    box-shadow:
+      0 0 12px rgba(255, 255, 255, 0.8),
+      0 0 20px rgba(180, 200, 255, 0.5);
   }
 }
 
@@ -51,22 +55,26 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src: url("https://cdn.jsdelivr.net/fontsource/fonts/stack-sans-notch@latest/latin-700-normal.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/fontsource/fonts/stack-sans-notch@latest/latin-700-normal.woff") format("woff");
+  src:
+    url("https://cdn.jsdelivr.net/fontsource/fonts/stack-sans-notch@latest/latin-700-normal.woff2")
+      format("woff2"),
+    url("https://cdn.jsdelivr.net/fontsource/fonts/stack-sans-notch@latest/latin-700-normal.woff")
+      format("woff");
 }
 
 @font-face {
-  font-family: 'SUIT Variable';
+  font-family: "SUIT Variable";
   font-style: normal;
   font-display: swap;
   font-weight: 100 900;
-  src: url('https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/variable/woff2/SUIT-Variable.woff2') format('woff2-variations');
+  src: url("https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/variable/woff2/SUIT-Variable.woff2")
+    format("woff2-variations");
   unicode-range: U+AC00-D7A3, U+0020-007E, U+3131-3163;
 }
 
 :root {
   --bg: #000000;
-  --accent: #3355D8;
+  --accent: #3355d8;
   --text: #f4f7ff;
   --muted: rgba(255, 255, 255, 0.7);
   --line: rgba(255, 255, 255, 0.2);
@@ -79,7 +87,12 @@
 }
 
 body {
-  font-family: "SUIT Variable", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  font-family:
+    "SUIT Variable",
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
+    sans-serif;
   background: var(--bg);
   color: var(--text);
   min-height: 100vh;
@@ -141,14 +154,19 @@ a {
   position: absolute;
   width: 150px;
   height: 2px;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.4) 50%, transparent 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    transparent 100%
+  );
   border-radius: 50%;
   z-index: -1;
   opacity: 0;
 }
 
 .shooting-star::before {
-  content: '';
+  content: "";
   position: absolute;
   width: 6px;
   height: 6px;
@@ -162,15 +180,15 @@ a {
 .shooting-star-1 {
   top: 15%;
   right: 10%;
-  animation: shooting 4s ease-in-out infinite;
-  animation-delay: 2s;
+  animation: shooting 6s ease-in-out infinite;
+  animation-delay: 4s;
 }
 
 .shooting-star-2 {
   top: 35%;
   right: 25%;
-  animation: shooting 5s ease-in-out infinite;
-  animation-delay: 6s;
+  animation: shooting 7s ease-in-out infinite;
+  animation-delay: 10s;
 }
 
 .hero-frame {
@@ -189,6 +207,31 @@ a {
   z-index: 3;
 }
 
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.auth-button {
+  padding: 6px 12px;
+  background: #3b82f6;
+  color: white;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.auth-button:hover {
+  background: #2563eb;
+}
+
 .logo {
   font-family: "Stack Sans Notch", "Space Grotesk", sans-serif;
   font-size: 28px;
@@ -197,7 +240,8 @@ a {
 
 .nav-links {
   display: flex;
-  gap: 26px;
+  gap: 12px;
+  align-items: center;
   text-transform: uppercase;
   font-size: 13px;
   letter-spacing: 0.05em;
@@ -206,7 +250,7 @@ a {
 
 .nav-links a {
   position: relative;
-  padding-bottom: 6px;
+  padding: 6px 0;
 }
 
 .nav-links a::after {
@@ -655,7 +699,7 @@ a {
   align-items: center;
   justify-content: center;
   gap: 20px;
-  background: #2A2F3D;
+  background: #2a2f3d;
   border-radius: 16px;
   padding: 32px 64px;
   text-decoration: none;
@@ -663,7 +707,9 @@ a {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   margin-top: 48px;
   color: #fff;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, sans-serif;
   font-size: 22px;
   font-weight: 700;
   letter-spacing: 0.02em;
@@ -691,7 +737,9 @@ a {
 
 .contact-email {
   color: #fff;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, sans-serif;
   font-size: 22px;
   font-weight: 700;
   letter-spacing: 0.02em;
@@ -838,7 +886,7 @@ a {
 
 /* 보안팀 카드 */
 .team-security {
-  background: linear-gradient(135deg, #E8A545 0%, #D4943D 100%);
+  background: linear-gradient(135deg, #e8a545 0%, #d4943d 100%);
   color: #1a1a1a;
 }
 
@@ -849,12 +897,12 @@ a {
 }
 
 .team-security .team-card-icon svg circle {
-  fill: #E8A545;
+  fill: #e8a545;
 }
 
 /* 개발팀 카드 */
 .team-dev {
-  background: linear-gradient(135deg, #00B894 0%, #00A085 100%);
+  background: linear-gradient(135deg, #00b894 0%, #00a085 100%);
   color: #fff;
 }
 
@@ -1014,7 +1062,7 @@ a {
 }
 
 .faq-item.open {
-  background: #2D3748;
+  background: #2d3748;
 }
 
 .faq-question {
@@ -1023,18 +1071,18 @@ a {
   justify-content: space-between;
   align-items: center;
   padding: 24px 28px;
-  background: #1A202C;
+  background: #1a202c;
   border: none;
   cursor: pointer;
   text-align: left;
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 16px;
   font-weight: 500;
   transition: all 0.2s ease;
 }
 
 .faq-question:hover {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .faq-icon {
@@ -1052,7 +1100,7 @@ a {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease;
-  background: #1A202C;
+  background: #1a202c;
 }
 
 .faq-item.open .faq-answer {
@@ -1064,8 +1112,8 @@ a {
   margin: 0 12px 12px 24px;
   font-size: 15px;
   line-height: 1.8;
-  color: #FFFFFF;
-  background: #2D3748;
+  color: #ffffff;
+  background: #2d3748;
   border-radius: 8px;
 }
 
@@ -1128,7 +1176,10 @@ a {
   place-items: center;
   color: rgba(255, 255, 255, 0.85);
   background: rgba(255, 255, 255, 0.04);
-  transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
 }
 
 .footer-link:hover {
@@ -1563,7 +1614,7 @@ a {
     transform: translateY(-50%);
   }
 
-  .nav-links {
+  .nav-right {
     display: none;
   }
 
