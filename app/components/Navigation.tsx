@@ -67,7 +67,7 @@ function Navigation({ currentPage = "home" }: NavigationProps) {
           }
           onClick={isMobile ? () => setMenuOpen(false) : undefined}
         >
-          {isMobile ? "Join" : "JOIN US"}
+          JOIN US
         </a>
       );
     }
@@ -158,18 +158,18 @@ function Navigation({ currentPage = "home" }: NavigationProps) {
               setMenuOpen(false);
             }}
           >
-            Activity
+            ACTIVITY
           </a>
           <Link to="/faq" onClick={() => setMenuOpen(false)}>
             FAQ
           </Link>
           {status !== "COMPLETED" && (
             <Link to="/recruit" onClick={() => setMenuOpen(false)}>
-              Recruit
+              RECRUIT
             </Link>
           )}
           <Link to="/contact" onClick={() => setMenuOpen(false)}>
-            Contact
+            CONTACT
           </Link>
           {status === "COMPLETED" && (
             <>
@@ -177,13 +177,13 @@ function Navigation({ currentPage = "home" }: NavigationProps) {
                 href="https://study.dkuaegis.org"
                 onClick={() => setMenuOpen(false)}
               >
-                Study
+                STUDY
               </a>
               <a
                 href="https://mypage.dkuaegis.org"
                 onClick={() => setMenuOpen(false)}
               >
-                Mypage
+                MYPAGE
               </a>
             </>
           )}

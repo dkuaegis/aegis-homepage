@@ -116,10 +116,11 @@ a {
 
 /* ========== 별들 ========== */
 .stars-container {
-  position: absolute;
+  position: fixed;
   inset: 0;
   z-index: 0;
   overflow: hidden;
+  pointer-events: none;
 }
 
 .star {
@@ -151,7 +152,7 @@ a {
 
 /* ========== 유성 ========== */
 .shooting-star {
-  position: absolute;
+  position: fixed;
   width: 150px;
   height: 2px;
   background: linear-gradient(
@@ -163,6 +164,7 @@ a {
   border-radius: 50%;
   z-index: -1;
   opacity: 0;
+  pointer-events: none;
 }
 
 .shooting-star::before {
@@ -205,6 +207,9 @@ a {
   justify-content: space-between;
   align-items: center;
   z-index: 3;
+  background: var(--bg);
+  padding: 8px 0;
+  position: relative;
 }
 
 .nav-right {
@@ -245,7 +250,7 @@ a {
   text-transform: uppercase;
   font-size: 13px;
   letter-spacing: 0.05em;
-  color: var(--muted);
+  color: #ffffff;
 }
 
 .nav-links a {
@@ -721,6 +726,28 @@ a {
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
 }
 
+.phone-card {
+  justify-content: center;
+}
+
+.copy-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s ease;
+  width: 32px;
+  height: 32px;
+}
+
+.copy-button:hover {
+  opacity: 0.7;
+}
+
 .contact-icon {
   width: 32px;
   height: 32px;
@@ -1099,17 +1126,18 @@ a {
 .faq-answer {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease;
+  transition: max-height 0.1s ease;
   background: #1a202c;
 }
 
 .faq-item.open .faq-answer {
   max-height: 300px;
+  transition: max-height 0.3s ease;
 }
 
 .faq-answer p {
-  padding: 20px 28px 20px 36px;
-  margin: 0 12px 12px 24px;
+  padding: 20px 28px;
+  margin: 0 12px 12px 12px;
   font-size: 15px;
   line-height: 1.8;
   color: #ffffff;
@@ -1456,7 +1484,7 @@ a {
   }
 
   .faq-answer p {
-    padding: 12px 16px 20px;
+    padding: 16px;
     font-size: 14px;
   }
 
@@ -1520,6 +1548,18 @@ a {
     gap: 12px;
     font-size: 16px;
     padding: 24px 32px;
+  }
+
+  .phone-card {
+    flex-direction: row;
+    justify-content: center;
+    font-size: 14px;
+    padding: 20px 24px;
+  }
+
+  .copy-button {
+    width: 28px;
+    height: 28px;
   }
 
   .contact-icon {
@@ -1692,7 +1732,7 @@ a {
     font-size: 18px;
     font-weight: 500;
     letter-spacing: 0.05em;
-    color: rgba(255, 255, 255, 0.6);
+    color: #ffffff;
     text-decoration: none;
     padding: 16px 24px;
     text-align: center;
