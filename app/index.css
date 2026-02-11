@@ -127,8 +127,10 @@ a {
   position: absolute;
 }
 
-/* FAQ에서는 화면 전체 고정 */
-.faq-page .stars-container {
+/* FAQ, Recruit, Contact에서는 화면 전체 고정 */
+.faq-page .stars-container,
+.recruit-page .stars-container,
+.contact-page .stars-container {
   position: fixed;
 }
 
@@ -180,8 +182,10 @@ a {
   position: absolute;
 }
 
-/* FAQ에서는 화면 전체 고정 */
-.faq-page .shooting-star {
+/* FAQ, Recruit, Contact에서는 화면 전체 고정 */
+.faq-page .shooting-star,
+.recruit-page .shooting-star,
+.contact-page .shooting-star {
   position: fixed;
 }
 
@@ -971,7 +975,7 @@ a {
 
 /* ========== Contact 섹션 ========== */
 .contact {
-  padding: 0 0 60px;
+  padding: 0 0 120px;
   background: transparent;
   color: #fff;
   position: relative;
@@ -983,18 +987,6 @@ a {
   max-width: 900px;
   margin: 0 auto;
   text-align: center;
-}
-
-/* ========== Contact 페이지 ========== */
-.contact-page {
-  min-height: 100vh;
-  background: var(--bg);
-  position: relative;
-  overflow: hidden;
-  padding: 32px 72px 0;
-  display: flex;
-  flex-direction: column;
-  gap: 56px;
 }
 
 .contact-page .nav {
