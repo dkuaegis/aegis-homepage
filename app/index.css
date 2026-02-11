@@ -116,11 +116,20 @@ a {
 
 /* ========== 별들 ========== */
 .stars-container {
-  position: fixed;
   inset: 0;
   z-index: 0;
   overflow: hidden;
   pointer-events: none;
+}
+
+/* 홈에서는 hero 영역 내에서만 */
+.hero .stars-container {
+  position: absolute;
+}
+
+/* FAQ에서는 화면 전체 고정 */
+.faq-page .stars-container {
+  position: fixed;
 }
 
 .star {
@@ -152,7 +161,6 @@ a {
 
 /* ========== 유성 ========== */
 .shooting-star {
-  position: fixed;
   width: 150px;
   height: 2px;
   background: linear-gradient(
@@ -165,6 +173,16 @@ a {
   z-index: -1;
   opacity: 0;
   pointer-events: none;
+}
+
+/* 홈에서는 hero 영역 내에서만 */
+.hero .shooting-star {
+  position: absolute;
+}
+
+/* FAQ에서는 화면 전체 고정 */
+.faq-page .shooting-star {
+  position: fixed;
 }
 
 .shooting-star::before {
@@ -278,6 +296,7 @@ a {
 }
 
 .hero-main {
+  position: relative;
   display: grid;
   gap: 18px;
   align-content: center;
