@@ -114,7 +114,6 @@ a {
   overflow: hidden;
 }
 
-/* ========== 별들 ========== */
 .stars-container {
   inset: 0;
   z-index: 0;
@@ -122,12 +121,10 @@ a {
   pointer-events: none;
 }
 
-/* 홈에서는 hero 영역 내에서만 */
 .hero .stars-container {
   position: absolute;
 }
 
-/* FAQ, Recruit, Contact에서는 화면 전체 고정 */
 .faq-page .stars-container,
 .recruit-page .stars-container,
 .contact-page .stars-container {
