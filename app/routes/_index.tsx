@@ -64,10 +64,10 @@ function App() {
             중앙동아리
           </p>
           <div className="value-grid">
-            <div className="value">Secure Coding</div>
-            <div className="value">Threat Modeling</div>
+            <div className="value">Web Development</div>
+            <div className="value">Game Development</div>
+            <div className="value">Security Engineering</div>
             <div className="value">Red &amp; Blue Team</div>
-            <div className="value">Product Security</div>
           </div>
         </section>
 
