@@ -5,6 +5,13 @@ import emailIcon from "../../assets/icon/ic_email.svg";
 import lockIcon from "../../assets/icon/ic_lock.svg";
 import creditCardIcon from "../../assets/icon/ic_creditCard.svg";
 
+export function meta() {
+  return [
+    { title: "모집 안내 - Aegis" },
+    { name: "description", content: "Aegis 신입 모집 안내" },
+  ];
+}
+
 function Recruit() {
   // 별들을 생성하는 함수
   const generateStars = (count: number, className: string) => {

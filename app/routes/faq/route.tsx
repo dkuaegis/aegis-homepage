@@ -2,6 +2,13 @@ import { useState, useMemo } from "react";
 import Navigation from "../../components/Navigation";
 import Footer from "../../components/Footer";
 
+export function meta() {
+  return [
+    { title: "FAQ - Aegis" },
+    { name: "description", content: "Aegis 자주 묻는 질문" },
+  ];
+}
+
 function FAQ() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 

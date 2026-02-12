@@ -2,6 +2,13 @@ import { useMemo, useState } from "react";
 import Navigation from "../../components/Navigation";
 import Footer from "../../components/Footer";
 
+export function meta() {
+  return [
+    { title: "Contact - Aegis" },
+    { name: "description", content: "Aegis 문의하기" },
+  ];
+}
+
 function Contact() {
   const [copied, setCopied] = useState(false);
 

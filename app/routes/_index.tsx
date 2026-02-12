@@ -1,6 +1,17 @@
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 
+export function meta() {
+  return [
+    { title: "Aegis - 단국대학교 개발·보안 동아리" },
+    {
+      name: "description",
+      content:
+        "성장을 원하는 모두에게 열려있는 단국대학교 최고의 개발·보안 중앙동아리",
+    },
+  ];
+}
+
 // 이미지 import
 import studyImg from "../assets/image/study.webp";
 import codeClubImg from "../assets/image/code-club.webp";
