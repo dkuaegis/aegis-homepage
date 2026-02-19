@@ -238,17 +238,18 @@ a {
 }
 
 .auth-button {
-  padding: 6px 12px;
+  padding: 11px 16px;
   background: #3b82f6;
   color: white;
   border-radius: 0.5rem;
   font-weight: 600;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   text-decoration: none;
   transition: background-color 0.2s ease;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   white-space: nowrap;
 }
 
@@ -260,6 +261,8 @@ a {
   font-family: "Stack Sans Notch", "Space Grotesk", sans-serif;
   font-size: 28px;
   letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
 }
 
 .nav-links {
@@ -267,14 +270,16 @@ a {
   gap: 12px;
   align-items: center;
   text-transform: uppercase;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0.05em;
   color: #ffffff;
 }
 
 .nav-links a {
   position: relative;
-  padding: 6px 0;
+  padding: 11px 0;
+  display: flex;
+  align-items: center;
 }
 
 .nav-links a::after {
