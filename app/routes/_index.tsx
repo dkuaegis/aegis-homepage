@@ -3,45 +3,42 @@ import Footer from "../components/Footer";
 
 export function meta() {
 	return [
-		{ title: "Aegis - 단국대학교 개발·보안 동아리" },
+		{ title: "Aegis - 단국대학교 근육개발·물리보안 동아리" },
 		{
 			name: "description",
 			content:
-				"성장을 원하는 모두에게 열려있는 단국대학교 최고의 개발·보안 중앙동아리",
+				"근성장을 원하는 모두에게 열려있는 단국대학교 최고의 피트니스·경호 중앙동아리",
 		},
 	];
 }
 
-// 이미지 import
-import studyImg from "../assets/image/study.webp";
-import codeClubImg from "../assets/image/code-club.webp";
-import devTeamImg from "../assets/image/dev-team.webp";
-import securityTeamImg from "../assets/image/security-team.webp";
-import seminarImg from "../assets/image/seminar.webp";
-import techTalkImg from "../assets/image/tech-talk.webp";
+// 파트너십 이미지 import (기존 에셋 유지)
 import psHspaceImg from "../assets/image/ps_hspace.webp";
 import psSwImg from "../assets/image/ps_sw.webp";
 import psTheoriImg from "../assets/image/ps_theori.webp";
 
 function App() {
-	// 별들을 생성하는 함수
-	const generateStars = (count: number, className: string) => {
+	// 둥둥 떠다니는 근육 이모티콘을 생성하는 함수
+	const generateMuscles = (count: number, className: string) => {
 		return Array.from({ length: count }, (_, i) => {
-			// 고유한 key 생성 (className + index + random value로 충분히 고유함)
 			const uniqueKey = `${className}-${i}-${Math.random().toString(36).substr(2, 9)}`;
+			// 크기와 애니메이션 속도를 랜덤하게 부여하여 입체감 형성
 			const style = {
 				left: `${Math.random() * 100}%`,
 				top: `${Math.random() * 100}%`,
 				animationDelay: `${Math.random() * 3}s`,
-				animationDuration: `${2 + Math.random() * 2}s`,
+				animationDuration: `${3 + Math.random() * 4}s`,
+				fontSize: `${Math.random() * 1.5 + 1}rem`, // 1rem ~ 2.5rem 사이의 크기
 			};
 			return (
 				<div
 					key={uniqueKey}
-					className={`star ${className}`}
+					className={`muscle-emoji ${className}`}
 					style={style}
 					aria-hidden="true"
-				/>
+				>
+					💪
+				</div>
 			);
 		});
 	};
@@ -49,16 +46,20 @@ function App() {
 	return (
 		<>
 			<main className="hero">
-				{/* 별들 */}
+				{/* 둥둥 떠다니는 근육들 */}
 				<div className="stars-container" aria-hidden="true">
-					{generateStars(50, "star-sm")}
-					{generateStars(30, "star-md")}
-					{generateStars(15, "star-lg")}
+					{generateMuscles(20, "muscle-sm")}
+					{generateMuscles(15, "muscle-md")}
+					{generateMuscles(10, "muscle-lg")}
 				</div>
 
-				{/* 유성 */}
-				<div className="shooting-star shooting-star-1" aria-hidden="true"></div>
-				<div className="shooting-star shooting-star-2" aria-hidden="true"></div>
+				{/* 날아다니는 대왕 근육 유성 */}
+				<div className="shooting-muscle shooting-muscle-1" aria-hidden="true">
+					💪
+				</div>
+				<div className="shooting-muscle shooting-muscle-2" aria-hidden="true">
+					💪
+				</div>
 
 				<div className="hero-frame" aria-hidden="true"></div>
 				<div className="panel-left" aria-hidden="true"></div>
@@ -70,17 +71,17 @@ function App() {
 				<Navigation currentPage="home" />
 
 				<section className="hero-main">
-					<div className="club-tag">단국대학교 개발·보안 동아리</div>
+					<div className="club-tag">단국대학교 근육개발·물리보안 동아리</div>
 					<h1 className="hero-title">AEGIS</h1>
 					<p className="hero-sub">
-						성장을 원하는 모두에게 열려있는 단국대학교 최고의 개발 · 보안
-						중앙동아리
+						근성장을 원하는 모두에게 열려있는 단국대학교 최고의 피트니스 ·
+						물리보안 중앙동아리 (3대 500 이하 가입 환영)
 					</p>
 					<div className="value-grid">
-						<div className="value">Web Development</div>
-						<div className="value">Game Development</div>
-						<div className="value">Security Engineering</div>
-						<div className="value">Red &amp; Blue Team</div>
+						<div className="value">Weight Training</div>
+						<div className="value">Bulk-up &amp; Diet</div>
+						<div className="value">Physical Security</div>
+						<div className="value">Chicken &amp; Sweet Potato</div>
 					</div>
 				</section>
 
@@ -93,83 +94,161 @@ function App() {
 			<section className="activity" id="activity">
 				<div className="activity-inner">
 					<div>
-						<div className="activity-title">Activity</div>
+						<div className="activity-title">Training</div>
 					</div>
 					<div className="activity-grid">
 						<div className="activity-card">
-							<div className="activity-card-img">
-								<img src={studyImg} alt="스터디" />
+							<div
+								className="activity-card-img"
+								style={{
+									display: "flex",
+									alignItems: "center",
+									justifyContent: "center",
+								}}
+							>
+								<span
+									role="img"
+									aria-label="쇠질 스터디"
+									style={{ fontSize: "5rem" }}
+								>
+									💪
+								</span>
 							</div>
 							<div className="activity-card-content">
-								<h3>스터디</h3>
+								<h3>쇠질 스터디</h3>
 								<p>
-									교내 동아리중 가장 다양하고 수준 높은 스터디를 통해 기초부터
-									심화까지 함께 공부하며 성장해요
+									교내 동아리중 가장 수준 높은 해부학 스터디를 통해 올바른
+									자극점부터 근비대 심화까지 함께 운동하며 성장해요
 								</p>
 							</div>
 						</div>
 
 						<div className="activity-card">
-							<div className="activity-card-img">
-								<img src={codeClubImg} alt="코드클럽" />
+							<div
+								className="activity-card-img"
+								style={{
+									display: "flex",
+									alignItems: "center",
+									justifyContent: "center",
+								}}
+							>
+								<span
+									role="img"
+									aria-label="코어클럽"
+									style={{ fontSize: "5rem" }}
+								>
+									🧱
+								</span>
 							</div>
 							<div className="activity-card-content">
-								<h3>코드클럽</h3>
+								<h3>코어(Core) 클럽</h3>
 								<p>
-									중학생들을 대상으로 코딩 교육 봉사를 진행하며, 가르치는 능력과
-									봉사시간을 함께 얻어가요
+									중학생들을 대상으로 올바른 코어 운동 교육 봉사를 진행하며,
+									가르치는 능력과 탄탄한 복근을 함께 얻어가요
 								</p>
 							</div>
 						</div>
 
 						<div className="activity-card">
-							<div className="activity-card-img">
-								<img src={devTeamImg} alt="개발팀" />
+							<div
+								className="activity-card-img"
+								style={{
+									display: "flex",
+									alignItems: "center",
+									justifyContent: "center",
+								}}
+							>
+								<span
+									role="img"
+									aria-label="근육개발팀"
+									style={{ fontSize: "5rem" }}
+								>
+									🔩
+								</span>
 							</div>
 							<div className="activity-card-content">
-								<h3>개발팀</h3>
+								<h3>근육개발팀</h3>
 								<p>
-									동아리 내에서 겪는 '실제 문제'를 해결하며, 개발 - 배포 - 운영
-									- 개선 프로세스를 경험할 수 있어요
+									동아리 내에서 겪는 '근손실' 문제를 해결하며, 영양 섭취 -
+									고강도 운동 - 충분한 휴식 프로세스를 경험할 수 있어요
 								</p>
 							</div>
 						</div>
 
 						<div className="activity-card">
-							<div className="activity-card-img">
-								<img src={securityTeamImg} alt="보안팀" />
+							<div
+								className="activity-card-img"
+								style={{
+									display: "flex",
+									alignItems: "center",
+									justifyContent: "center",
+								}}
+							>
+								<span
+									role="img"
+									aria-label="물리보안팀"
+									style={{ fontSize: "5rem" }}
+								>
+									🥋
+								</span>
 							</div>
 							<div className="activity-card-content">
-								<h3>보안팀</h3>
+								<h3>물리보안팀</h3>
 								<p>
-									정기적으로 CTF에 참여하고 내부 세미나로 성과를 공유하며,
-									개발팀 제품에 대한 보안 검사를 수행해요
+									정기적으로 주짓수/복싱 대회에 참여하고, 회원들의 단백질 쉐이크
+									도난을 막는 실전 물리 보안 검사를 수행해요
 								</p>
 							</div>
 						</div>
 
 						<div className="activity-card">
-							<div className="activity-card-img">
-								<img src={seminarImg} alt="세미나" />
+							<div
+								className="activity-card-img"
+								style={{
+									display: "flex",
+									alignItems: "center",
+									justifyContent: "center",
+								}}
+							>
+								<span
+									role="img"
+									aria-label="헬창 세미나"
+									style={{ fontSize: "5rem" }}
+								>
+									🎓
+								</span>
 							</div>
 							<div className="activity-card-content">
-								<h3>세미나</h3>
+								<h3>헬창 세미나</h3>
 								<p>
-									졸업하여 현장에서 다양한 경험을 쌓으신 선배님들과 교류하며
-									대학 생활과 취업에 관한 꿀팁을 배워봐요
+									졸업하여 헬스장을 오픈하신 선배님들과 교류하며 부상 방지
+									꿀팁과 가성비 보충제 추천을 받아봐요
 								</p>
 							</div>
 						</div>
 
 						<div className="activity-card">
-							<div className="activity-card-img">
-								<img src={techTalkImg} alt="테크톡" />
+							<div
+								className="activity-card-img"
+								style={{
+									display: "flex",
+									alignItems: "center",
+									justifyContent: "center",
+								}}
+							>
+								<span
+									role="img"
+									aria-label="득근톡"
+									style={{ fontSize: "5rem" }}
+								>
+									📈
+								</span>
 							</div>
 							<div className="activity-card-content">
-								<h3>테크톡</h3>
+								<h3>득근톡</h3>
 								<p>
-									평소 관심있었던 내용을 공유하며 복습하고, 발표 경험도
-									쌓아보아요
+									평소 자신만의 운동 루틴과 식단을 공유하며 피드백을 받고,
+									바디프로필 촬영 경험도 쌓아보아요
 								</p>
 							</div>
 						</div>
@@ -179,16 +258,16 @@ function App() {
 
 			<section className="partners">
 				<div className="partners-inner">
-					<div className="partners-title">Partnerships</div>
+					<div className="partners-title">Protein Sponsorships</div>
 					<div className="partners-grid">
 						<div className="partner-card">
-							<img src={psHspaceImg} alt="H-Space" />
+							<img src={psHspaceImg} alt="H-Space (헬스장)" />
 						</div>
 						<div className="partner-card">
-							<img src={psSwImg} alt="SW중심대학" />
+							<img src={psSwImg} alt="Squat & Weight 중심대학" />
 						</div>
 						<div className="partner-card">
-							<img src={psTheoriImg} alt="Theori" />
+							<img src={psTheoriImg} alt="Theori (보충제)" />
 						</div>
 					</div>
 				</div>
@@ -196,14 +275,14 @@ function App() {
 
 			<Footer />
 
-			{/* 고정된 가입하기 버튼 */}
+			{/* 고정된 가입하기 버튼 -> PT 등록 버튼 */}
 			<a
 				href="https://join.dkuaegis.org/login"
 				className="fixed-join-button"
 				target="_blank"
 				rel="noopener noreferrer"
 			>
-				<span>가입하기</span>
+				<span>PT 등록하기</span>
 				<svg
 					width="20"
 					height="20"
