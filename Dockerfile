@@ -12,7 +12,7 @@ COPY . .
 
 RUN pnpm build
 
-FROM nginx:alpine
+FROM nginx:1.31.0-alpine
 
 COPY --from=builder /app/build/client /usr/share/nginx/html
 COPY nginx/default.conf /etc/nginx/conf.d/default.conf
